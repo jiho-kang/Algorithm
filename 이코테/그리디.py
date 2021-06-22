@@ -260,4 +260,8 @@ print(max(case))
 #
 # 여러분은 여학생의 수 N, 남학생의 수 M, 인턴쉽에 참여해야하는 인원 K가 주어질 때 만들 수 있는 최대의 팀 수를 구하면 된다.
 
+import sys
+a, b, c = map(int,sys.stdin.readline().split())
+print(a,b,c)
+
 

@@ -1,21 +1,27 @@
-n = int(input("N크기: "))
-x, y = 1, 1
-plans = input("plans: ").split()
+import sys
+f, m, i = map(int,sys.stdin.readline().split())
+max = 0
+if f>2*m :
+    if f-(2*m) >= i:
+        max = m
+    else:
+        k = f-i
+        if k%3 == 0:
+            max = m - (k // 3)
+        else:
+            max = m - (k // 3 ) - 1
+else:
+    if (f%2 > 0):
+        f -= 1
+        i -= 1
 
-#U, D, L, R 에 따른 움직임
-dx = [-1,1,0,0]
-dy = [0,0,-1,1]
-move_types = ["U","D","L","R"]
+    if m-(f//2) > i:
+        max = f//2
+    else:
+        k = i - (m - (f//2))
+        if k % 3 == 0:
+            max = m - (k//3)
+        else:
+            max = m - (k // 3 ) - 1
 
-#이동 계획 하나씩 확인하기
-for plan in plans:
-    for i in range(len(move_types)):
-        if plan == move_types[i]:
-            nx = x + dx[i]
-            ny = y + dy[i]
-        #공간을 벗어나는 경우에 무시하기
-        if nx<1 or ny<1 or nx>n or ny>n:
-            continue
-        x,y = nx,ny
-
-print(x,y)
+print(max)    
