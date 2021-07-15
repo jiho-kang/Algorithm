@@ -1,5 +1,6 @@
 # https://programmers.co.kr/learn/courses/30/lessons/12940
 
+# 내가 푼 방법
 def solution(n, m):
     answer = []
     small = 1
@@ -22,5 +23,16 @@ def solution(n, m):
     print('small:',small)
     answer.append(small*n*m)
     print('small*n*m:',small*n*m)
+
+    return answer
+
+#유클리드 호제법
+def gcdlcm(a, b):
+    c, d = max(a, b), min(a, b)
+    t = 1
+    while t > 0:
+        t = c % d
+        c, d = d, t
+    answer = [c, int(a*b/c)]
 
     return answer
