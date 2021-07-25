@@ -1,5 +1,6 @@
 # https://programmers.co.kr/learn/courses/30/lessons/17682#
 
+# my solution
 def solution(string):
   j = 0
   split = []
@@ -39,3 +40,29 @@ def solution(string):
       score[i] = score[i] * -1
 #     print('i there',score)
   return sum(score)
+
+
+
+# better solution
+def solution(dartResult):
+    point = []
+    answer = []
+    dartResult = dartResult.replace('10','k')
+    point = ['10' if i == 'k' else i for i in dartResult]
+    print(point)
+
+    i = -1
+    sdt = ['S', 'D', 'T']
+    for j in point:
+        if j in sdt :
+            answer[i] = answer[i] ** (sdt.index(j)+1)
+        elif j == '*':
+            answer[i] = answer[i] * 2
+            if i != 0 :
+                answer[i - 1] = answer[i - 1] * 2
+        elif j == '#':
+            answer[i] = answer[i] * (-1)
+        else:
+            answer.append(int(j))
+            i += 1
+    return sum(answer)
