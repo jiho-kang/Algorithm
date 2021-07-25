@@ -12,7 +12,7 @@ def solution(string):
     if len(split) == 2:
       split.append(string[j:])
       break
-  print(split)
+#   print(split)
   score = []
   for i in range(3):
     if "S" in split[i]:
@@ -27,7 +27,7 @@ def solution(string):
       ind = split[i].find("T")
       num = int(split[i][:ind])
       score.append(num**3)
-    print('i here',score)
+#     print('i here',score)
 
     if "*" in split[i]:
       if i == 0:
@@ -37,5 +37,5 @@ def solution(string):
         score[i-1] = score[i-1] * 2
     elif "#" in split[i]:
       score[i] = score[i] * -1
-    print('i there',score)
+#     print('i there',score)
   return sum(score)
