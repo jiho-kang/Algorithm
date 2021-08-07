@@ -14,5 +14,4 @@ for i in lst:
     k %= i
     if k == 0:
       break
-
 print(count)
