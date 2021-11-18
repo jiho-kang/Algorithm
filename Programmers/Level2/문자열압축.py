@@ -1,4 +1,4 @@
-https://programmers.co.kr/learn/courses/30/lessons/60057?language=python3
+# https://programmers.co.kr/learn/courses/30/lessons/60057?language=python3
 
 def solution(s):
   if len(s) == 1:
